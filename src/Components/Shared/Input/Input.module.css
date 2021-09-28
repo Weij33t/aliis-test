@@ -1,0 +1,28 @@
+.Label {
+  text-align: left;
+  color: #424242;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.Input {
+  width: 100%;
+  margin-top: 7px;
+  padding: 16px;
+
+  background: #ffffff;
+  border: 1px solid #c9cacc;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-size: 16px;
+}
+
+.Error,
+.Error input {
+  color: red;
+}
+
+.ErrorText {
+  margin-top: 5px;
+}

@@ -1,0 +1,52 @@
+.LoginContainer {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background: url('../../img/hotels/hotel-photo.png');
+
+  z-index: 1;
+}
+
+.LoginContainer:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+
+  z-index: -1;
+}
+
+.Login {
+  padding: 32px;
+  width: calc(409px - 64px);
+  min-width: 300px;
+  max-width: 550px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr;
+  gap: 25px;
+
+  background: #fff;
+  box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+}
+
+.LoginHeader {
+  margin-bottom: 8px;
+
+  color: #424242;
+  font-size: 24px;
+  letter-spacing: -2px;
+}

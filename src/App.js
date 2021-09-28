@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+
+import { Login } from './Pages/Login/Login'
+import { hotelsAPI } from './api/hotels'
 
 function App() {
+  console.log(hotelsAPI)
+  const f = () => {
+    hotelsAPI.fetchHotels({
+      location: 'UK',
+      checkIn: '2021-09-29',
+      checkOut: '2021-10-10',
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Login />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
