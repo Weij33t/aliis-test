@@ -1,0 +1,74 @@
+.Hotel {
+  display: grid;
+  grid-template-columns: 1fr 4fr auto 1.2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 'Home Name . Heart' 'Home Date . .' 'Home Rating . Price';
+  width: calc(100% - 15px);
+  padding: 17px 0;
+  padding-right: 15px;
+
+  border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+}
+
+.LikedHotel {
+  width: calc(100% - 10px);
+  grid-template-columns: 4fr 1fr 1.5fr;
+  grid-template-areas: 'Name Name Heart' 'Date Date .' 'Rating Price Price';
+  padding-bottom: 5px;
+  padding-right: 15px;
+}
+
+.LikedHotel .HotelHome {
+  display: none;
+}
+
+.HotelHome {
+  grid-area: Home;
+}
+
+.HotelName {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  justify-self: start;
+  grid-area: Name;
+
+  overflow: hidden;
+
+  text-align: left;
+  line-height: 20px;
+}
+
+.HotelHeart {
+  justify-self: end;
+  grid-area: Heart;
+
+  cursor: pointer;
+}
+
+.HotelDate {
+  justify-self: start;
+  grid-area: Date;
+
+  font-size: 14px;
+  color: #878787;
+}
+
+.HotelRating {
+  justify-self: start;
+  grid-area: Rating;
+}
+
+.HotelPrice {
+  grid-area: Price;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #878787;
+}
+
+.HotelPriceValue {
+  font-size: 17px;
+  color: #424242;
+}

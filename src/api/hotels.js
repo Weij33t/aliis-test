@@ -1,5 +1,4 @@
-const PRICE_URL = 'http://engine.hotellook.com/api/v2/cache.json'
-const LOCATION_URL = ''
+const API_URL = 'http://engine.hotellook.com/api/v2/cache.json'
 
 const putSearchParamsToUrl = (url, params) => {
   Object.entries(params).forEach(([key, value]) => {
@@ -10,9 +9,8 @@ const putSearchParamsToUrl = (url, params) => {
 export const hotelsAPI = {
   async fetchHotels(searchParams) {
     try {
-      const fetchURL = new URL(PRICE_URL)
+      const fetchURL = new URL(API_URL)
       putSearchParamsToUrl(fetchURL, searchParams)
-      console.log(fetchURL)
       const response = await fetch(fetchURL.href, {
         method: 'GET',
         headers: {
@@ -20,7 +18,7 @@ export const hotelsAPI = {
         },
       })
       const data = await response.json()
-      console.log(data)
+      return data
     } catch (e) {
       throw e
     }

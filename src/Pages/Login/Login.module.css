@@ -50,3 +50,7 @@
   font-size: 24px;
   letter-spacing: -2px;
 }
+
+.AuthError {
+  color: red;
+}

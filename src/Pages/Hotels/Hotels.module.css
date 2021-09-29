@@ -1,0 +1,67 @@
+.Hotels {
+  display: grid;
+  grid-template-columns: 360px 665px;
+  grid-template-rows: minmax(500px, 1fr);
+  grid-template-areas: 'Aside Main';
+  justify-content: center;
+  gap: 24px;
+}
+
+.Aside {
+  grid-area: Aside;
+}
+
+.Main {
+  display: grid;
+  grid-template-areas: 'Top' 'Carousel' 'LikedCount' 'List';
+  grid-area: Main;
+  align-self: start;
+  padding: 32px;
+  padding-top: 48px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.BreadCrumb {
+  font-size: 32px;
+}
+
+.Date {
+  font-size: 24px;
+  color: #41522e;
+}
+
+.SearchHotel {
+  grid-area: Search;
+}
+
+.LikedHotels {
+  grid-area: Liked;
+}
+
+.HotelsTop {
+  display: flex;
+  justify-content: space-between;
+  grid-area: Top;
+  padding-bottom: 25px;
+}
+
+.LikedCount {
+  grid-area: LikedCount;
+  padding: 10px 0;
+
+  font-size: 17px;
+  text-align: left !important;
+}
+
+.LikedCount span {
+  font-weight: bold;
+}
+
+.Carousel {
+  grid-area: Carousel;
+}
+
+.HotelList {
+  grid-area: List;
+}

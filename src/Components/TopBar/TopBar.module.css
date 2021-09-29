@@ -1,0 +1,27 @@
+.TopBar {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.LogoutButton {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: none;
+  background: none;
+
+  font-size: 16px;
+  color: #41522e;
+
+  cursor: pointer;
+}

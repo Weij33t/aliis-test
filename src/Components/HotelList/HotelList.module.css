@@ -1,0 +1,24 @@
+.List {
+  max-height: 500px;
+  padding-right: 10px;
+  overflow-y: auto;
+
+  background: #fff;
+}
+
+.LikedList {
+  width: 100%;
+  max-height: 300px;
+}
+
+.List::-webkit-scrollbar {
+  width: 2px;
+}
+
+.List::-webkit-scrollbar-track {
+  background: #e7e7e7;
+}
+
+.List::-webkit-scrollbar-thumb {
+  background: #41522e;
+}

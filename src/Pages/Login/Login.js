@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { fakeLoginApi } from '../../api/login'
 import { Button } from '../../Components/Shared/Button/Button'
 import { Input } from '../../Components/Shared/Input/Input'
 import {
@@ -11,7 +13,13 @@ import styles from './Login.module.css'
 export const Login = () => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState({ login: null, password: null })
+  const [error, setError] = useState({
+    login: null,
+    password: null,
+    auth: null,
+  })
+
+  const history = useHistory()
 
   const loginHandler = (e) => {
     setError({ ...error, login: null })
@@ -26,19 +34,35 @@ export const Login = () => {
     const loginErrorDescription = getLoginErrorDescription(login)
     const passwordErrorDescription = getPasswordErrorDescription(password)
     if (!loginErrorDescription && !passwordErrorDescription) {
-      setError({ login: null, password: null })
-      return
+      authUser()
+    } else {
+      setError({
+        ...error,
+        login: loginErrorDescription,
+        password: passwordErrorDescription,
+      })
     }
-    setError({
-      login: loginErrorDescription,
-      password: passwordErrorDescription,
-    })
   }
 
+  const authUser = () => {
+    const response = fakeLoginApi.authUser(login, password)
+    if (typeof response === 'string') {
+      console.log(response)
+      setError({ ...error, auth: response })
+    } else {
+      console.log(response, 2)
+      localStorage.setItem('user', JSON.stringify(response))
+
+      history.replace('/hotels')
+    }
+  }
   return (
     <div className={styles.LoginContainer}>
       <div className={styles.Login}>
-        <h1 className={styles.LoginHeader}>Simple Hotel Check</h1>
+        <div>
+          <h1 className={styles.LoginHeader}>Simple Hotel Check</h1>
+          <span className={styles.AuthError}>{error.auth}</span>
+        </div>
         <Input
           onChange={loginHandler}
           error={error.login}

@@ -4,6 +4,7 @@ import styles from './Input.module.css'
 export const Input = ({ label, error, ...rest }) => {
   return (
     <label
+      style={rest.labelStyles}
       className={`${styles.Label} ${error ? styles.Error : ''}`}
       htmlFor={rest.id}
     >

@@ -1,0 +1,20 @@
+.LikedList {
+  margin-top: 24px;
+  padding: 32px;
+  padding-bottom: 16px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.LikedList h2 {
+  text-align: left;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.SortButtons {
+  grid-area: Buttons;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 10px;
+}
