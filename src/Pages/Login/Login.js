@@ -47,10 +47,8 @@ export const Login = () => {
   const authUser = () => {
     const response = fakeLoginApi.authUser(login, password)
     if (typeof response === 'string') {
-      console.log(response)
       setError({ ...error, auth: response })
     } else {
-      console.log(response, 2)
       localStorage.setItem('user', JSON.stringify(response))
 
       history.replace('/hotels')

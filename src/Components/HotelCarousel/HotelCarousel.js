@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import Carousel from 'react-elastic-carousel'
 
 import Image1 from '../../img/carousel/image1.png'
 import Image2 from '../../img/carousel/image2.png'
 import Image3 from '../../img/carousel/image3.png'
 
-const Component = () => {
+export const HotelCarousel = () => {
   const breakpoints = [
     {
       width: 1,
@@ -34,17 +34,10 @@ const Component = () => {
       outerSpacing={-10}
       itemsToShow={3.5}
     >
-      <img src={Image1} draggable={false} />
-      <img src={Image2} draggable={false} />
-      <img src={Image3} draggable={false} />
-      <img src={Image1} draggable={false} />
+      <img src={Image1} draggable={false} alt={'hotel'} />
+      <img src={Image2} draggable={false} alt={'hotel'} />
+      <img src={Image3} draggable={false} alt={'hotel'} />
+      <img src={Image1} draggable={false} alt={'hotel'} />
     </Carousel>
   )
 }
-
-const areEqual = (prevProps, nextProps) => {
-  console.log(prevProps, nextProps)
-  return false
-}
-
-export const HotelCarousel = React.memo(Component, areEqual)

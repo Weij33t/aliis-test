@@ -4,7 +4,7 @@ import { Home } from '../Shared/Icons/Home'
 import styles from './Hotel.module.css'
 import { HeartIcon } from './../Shared/Icons/Heart'
 import { Rating } from './../Rating/Rating'
-import { convertToRubles, getDaysQuantity } from '../../utils/hotel'
+import { convertToRubles } from '../../utils/hotel'
 import {
   addToLikedCreator,
   removeFromLikedCreator,
@@ -17,16 +17,11 @@ import { shortDate } from './../../utils/hotel'
 export const Hotel = ({ hotel, isLikedList }) => {
   const dispatch = useDispatch()
   const likedList = useSelector((state) => state.likedReducer.liked)
-  const { checkIn, checkOut } = useSelector(
-    (state) => state.hotelsReducer.search
-  )
+  const { checkIn } = useSelector((state) => state.hotelsReducer.search)
   const days = Math.max(
     0,
     useSelector((state) => state.hotelsReducer.days)
   )
-
-  const checkIsInLiked = () =>
-    likedList.some((likedHotel) => likedHotel.hotelId === hotel.hotelId)
 
   const heartClickHandler = () => {
     const isLiked = likedList.some(

@@ -18,7 +18,6 @@ export const Hotels = () => {
     dispatch(fetchHotelCreator())
   }, [])
 
-  console.log(likedHotels)
   return (
     <>
       <TopBar />
@@ -38,7 +37,11 @@ export const Hotels = () => {
           <span className={styles.LikedCount}>
             Добавлено в Избранное: <span> {likedHotels.length}</span> Отеля
           </span>
-          <HotelList className={styles.HotelList} hotels={hotels} />
+          <HotelList
+            isLikedList={false}
+            className={styles.HotelList}
+            hotels={hotels}
+          />
         </div>
       </div>
     </>
