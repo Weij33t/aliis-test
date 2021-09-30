@@ -25,3 +25,18 @@
 
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+  .TopBar {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Title {
+    font-size: 18px;
+  }
+  .LogoutButton {
+    font-size: 15px;
+  }
+}

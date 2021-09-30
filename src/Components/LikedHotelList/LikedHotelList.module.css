@@ -18,3 +18,9 @@
   grid-template-columns: max-content max-content;
   gap: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .LikedList {
+    padding: 24px;
+  }
+}

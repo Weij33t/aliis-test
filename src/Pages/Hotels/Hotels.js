@@ -25,10 +25,7 @@ export const Hotels = () => {
       <div className={styles.Hotels}>
         <aside className={styles.Aside}>
           <SearchHotel className={styles.SearchHotel} />
-          <LikedHotelList
-            className={styles.LikedHotels}
-            likedHotels={likedHotels}
-          />
+          <LikedHotelList className={styles.LikedHotels} />
         </aside>
         <div className={styles.Main}>
           <div className={styles.HotelsTop}>
@@ -37,17 +34,11 @@ export const Hotels = () => {
             </span>
             <span className={styles.Date}>07 июля 2020</span>
           </div>
-          <div className={styles.Carousel}>
-            <HotelCarousel />
-          </div>
+          <HotelCarousel />
           <span className={styles.LikedCount}>
             Добавлено в Избранное: <span> {likedHotels.length}</span> Отеля
           </span>
-          <HotelList
-            className={styles.HotelList}
-            hotels={hotels}
-            isLikedList={false}
-          />
+          <HotelList className={styles.HotelList} hotels={hotels} />
         </div>
       </div>
     </>

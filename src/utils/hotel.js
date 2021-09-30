@@ -16,4 +16,32 @@ export const formatDate = (date) => {
 }
 
 export const getDaysQuantity = (from, to) =>
-  new Date(to).getDate() - new Date(from).getDate()
+  Math.ceil(
+    (new Date(to).getTime() - new Date(from).getTime()) / (1000 * 60 * 60 * 24)
+  )
+
+export const shortDate = (date) => {
+  let monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ]
+
+  let day = date.getDate()
+
+  let monthIndex = date.getMonth()
+  let monthName = monthNames[monthIndex]
+
+  let year = date.getFullYear()
+
+  return `${day} ${monthName} ${year}`
+}

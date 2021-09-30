@@ -11,12 +11,13 @@ import {
   setDescPriceCreator,
 } from '../../store/likedReducer'
 
-export const LikedHotelList = ({ likedHotels, ...rest }) => {
+export const LikedHotelList = ({ ...rest }) => {
   const dispatch = useDispatch()
   const [isPriceButtonActive, setIsPriceButtonActive] = useState(false)
   const [isRatingButtonActive, setIsRatingButtonActive] = useState(false)
   const rating = useSelector((state) => state.likedReducer.rating)
   const price = useSelector((state) => state.likedReducer.price)
+  const likedHotels = useSelector((state) => state.likedReducer.liked)
 
   const ratingClickHandler = () => {
     if (rating.asc) dispatch(setDescRatingCreator())

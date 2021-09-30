@@ -12,7 +12,7 @@
 
 .LikedHotel {
   width: calc(100% - 10px);
-  grid-template-columns: 4fr 1fr 1.5fr;
+  grid-template-columns: 4fr 1fr 1.5fr !important;
   grid-template-areas: 'Name Name Heart' 'Date Date .' 'Rating Price Price';
   padding-bottom: 5px;
   padding-right: 15px;
@@ -71,4 +71,42 @@
 .HotelPriceValue {
   font-size: 17px;
   color: #424242;
+}
+
+@media screen and (max-width: 1200px) {
+  .Hotel {
+    grid-template-columns: 1fr 3fr auto 1.2fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Hotel {
+    grid-template-columns: 1fr 2fr auto 1.5fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Hotel {
+    width: calc(100% - 10px);
+    grid-template-columns: 4fr 1fr 1.5fr !important;
+    grid-template-areas: 'Name Name Heart' 'Date Date .' 'Rating Price Price';
+    padding-bottom: 5px;
+    padding-right: 15px;
+  }
+  .HotelName {
+    font-size: 14px;
+  }
+  .HotelDate {
+    font-size: 13px;
+  }
+  .HotelHome {
+    display: none;
+  }
+  .HotelRating svg {
+    width: 14px;
+    height: 15px;
+  }
+  .HotelPriceValue {
+    font-size: 14px;
+  }
 }

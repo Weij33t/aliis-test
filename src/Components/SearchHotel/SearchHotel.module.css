@@ -1,7 +1,7 @@
 .SearchHotel {
   padding: 32px;
   width: calc(360px - 64px);
-  max-width: 360px;
+  max-width: 700px;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -11,4 +11,24 @@
   background: #fff;
   box-shadow: 0px 4px 33px rgba(0, 0, 0, 0.04);
   border-radius: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+  .SearchHotel {
+    width: calc(300px - 64px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .SearchHotel {
+    padding: 24px;
+    width: calc(270px - 48px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .SearchHotel {
+    padding: 24px;
+    width: calc(100% - 48px);
+  }
 }

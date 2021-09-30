@@ -6,6 +6,7 @@ const hotelSelector = (state) => state.hotelsReducer
 
 function* fetchHotelsWorker() {
   const { search } = yield select(hotelSelector)
+
   const data = yield call(() => hotelsAPI.fetchHotels(search))
   yield put(setHotelsCreator(data))
 }

@@ -4,13 +4,18 @@ import { Input } from '../Shared/Input/Input'
 import styles from './SearchHotel.module.css'
 import { Button } from './../Shared/Button/Button'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchHotelCreator, setSearchCreator } from '../../store/hotelsReducer'
+import {
+  fetchHotelCreator,
+  setDaysCreator,
+  setSearchCreator,
+} from '../../store/hotelsReducer'
 import { getDay } from '../../utils/hotel'
 import { formatDate } from './../../utils/hotel'
 
 export const SearchHotel = ({ ...rest }) => {
   const dispatch = useDispatch()
   const search = useSelector((state) => state.hotelsReducer.search)
+  const days = useSelector((state) => state.hotelsReducer.days)
   const labelOverrideStyle = {
     fontWeight: '500',
   }
@@ -19,8 +24,10 @@ export const SearchHotel = ({ ...rest }) => {
     dispatch(setSearchCreator({ ...search, location: value }))
   const setCheckIn = (value) =>
     dispatch(setSearchCreator({ ...search, checkIn: formatDate(value) }))
-  const setCheckOut = (value) =>
+  const setDays = (value) => {
+    dispatch(setDaysCreator(value))
     dispatch(setSearchCreator({ ...search, checkOut: getDay(value) }))
+  }
 
   return (
     <div {...rest} className={styles.SearchHotel}>
@@ -40,10 +47,12 @@ export const SearchHotel = ({ ...rest }) => {
       />
       <Input
         label={'Количество дней'}
-        defaultValue={1}
+        type={'number'}
+        value={days}
         error={null}
         labelStyles={labelOverrideStyle}
-        onChange={(e) => setCheckOut(e.target.value)}
+        onChange={(e) => setDays(e.target.value)}
+        onBlur={(e) => dispatch(setDaysCreator(Math.max(e.target.value, 0)))}
       />
       <Button onClick={() => dispatch(fetchHotelCreator())} value={'Найти'} />
     </div>

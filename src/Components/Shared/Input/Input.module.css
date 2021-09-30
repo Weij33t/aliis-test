@@ -26,3 +26,13 @@
 .ErrorText {
   margin-top: 5px;
 }
+
+@media screen and (max-width: 1200px) {
+  .Label {
+  }
+  .Input {
+    justify-self: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+}

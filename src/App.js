@@ -14,7 +14,6 @@ function App() {
     if (user) history.replace('/hotels')
     else history.replace('/')
   }, [])
-
   // const f = () => {
   //   hotelsAPI.fetchHotels({
   //     location: 'UK',

@@ -42,6 +42,7 @@
 .HotelsTop {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   grid-area: Top;
   padding-bottom: 25px;
 }
@@ -64,4 +65,66 @@
 
 .HotelList {
   grid-area: List;
+}
+
+@media screen and (max-width: 1200px) {
+  .Hotels {
+    grid-template-columns: 300px 505px;
+  }
+  .BreadCrumb {
+    font-size: 28px;
+  }
+  .BreadCrumb svg {
+    width: 18px;
+    height: 18px;
+  }
+  .Date {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Hotels {
+    grid-template-columns: 270px 400px;
+    gap: 20px;
+  }
+  .BreadCrumb {
+    font-size: 22px;
+  }
+  .BreadCrumb svg {
+    width: 14px;
+    height: 14px;
+  }
+  .Date {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Hotels {
+    grid-template-areas: 'Aside' 'Main';
+    grid-template-columns: 75%;
+    grid-template-rows: minmax(500px, 1fr);
+    justify-content: center;
+  }
+  .BreadCrumb {
+    font-size: 18px;
+  }
+  .BreadCrumb svg {
+    width: 12px;
+    height: 12px;
+  }
+  .Date {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .Hotels {
+    padding: 0 15px;
+    grid-template-columns: 100%;
+  }
+  .Main {
+    padding: 15px;
+  }
 }
