@@ -71,6 +71,9 @@
   .Hotels {
     grid-template-columns: 300px 505px;
   }
+  .Hotels img {
+    width: 150px !important;
+  }
   .BreadCrumb {
     font-size: 28px;
   }

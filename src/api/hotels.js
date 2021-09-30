@@ -1,4 +1,4 @@
-const API_URL = 'http://engine.hotellook.com/api/v2/cache.json'
+const API_URL = 'https://engine.hotellook.com/api/v2/cache.json'
 
 const putSearchParamsToUrl = (url, params) => {
   Object.entries(params).forEach(([key, value]) => {

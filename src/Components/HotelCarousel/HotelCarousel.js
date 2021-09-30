@@ -7,32 +7,16 @@ import Image3 from '../../img/carousel/image3.png'
 
 export const HotelCarousel = () => {
   const breakpoints = [
-    {
-      width: 1,
-      itemsToShow: 2,
-      itemPadding: [0, 30, 0, 30],
-      outerSpacing: 0,
-    },
-
-    {
-      width: 750,
-      itemsToShow: 1,
-    },
-    {
-      width: 1200,
-      itemsToShow: 2.5,
-      itemPadding: [0, 50, 0, 50],
-      outerSpacing: 0,
-    },
+    { width: 1, itemsToShow: 1.5 },
+    { width: 166, itemsToShow: 3.5 },
   ]
   return (
     <Carousel
       breakPoints={breakpoints}
       showArrows={false}
       pagination={false}
-      itemPadding={[0, 70, 0, 70]}
-      outerSpacing={-10}
       itemsToShow={3.5}
+      itemPadding={[0, 90, 0, 90]}
     >
       <img src={Image1} draggable={false} alt={'hotel'} />
       <img src={Image2} draggable={false} alt={'hotel'} />
